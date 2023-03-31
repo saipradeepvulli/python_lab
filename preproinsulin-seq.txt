@@ -1,0 +1,29 @@
+import re
+
+originaltext = "ORIGIN 1 malwmrillpl lallalwgpd paaafvnqhl cgshlvealy lvcgergffy tpktrreaed 61 lqvgqvelgg gpgagslqpl alegslqkrg iveqcctsic slyqlenyc //"
+
+print("original text is :",originaltext)
+
+clean_text = re.sub(r'[^\w\s]', '', originaltext)
+
+print(" After Removing special characters :",clean_text)
+
+clean_text1 = clean_text.strip().replace(" ", "")
+
+print("After removing spaces :",clean_text1)
+
+unwanted_character = "ORIGIN1"
+
+clean_text2 = clean_text1.replace(unwanted_character, "")
+
+print("After Removing unwanted characters :",clean_text2)
+
+
+clean_text3 = re.sub(r'\d+', '', clean_text2)
+
+print("After removing digits :",clean_text3)
+
+final_text_count = len(clean_text3)
+
+print(final_text_count)
+
